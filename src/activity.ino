@@ -96,7 +96,7 @@ void loop(){
   maxim_heart_rate_and_oxygen_saturation(irBuffer, bufferLength, redBuffer, &spo2, &validSPO2, &heartRate, &validHeartRate);
 
   //Continuously taking samples from MAX30102.  Heart rate and SpO2 are calculated every 1 second
-  if (particleSensor.getIR()>= 50000)
+ while(particleSensor.getIR()>= 50000)
   {
    
     //dumping the first 25 sets of samples in the memory and shift the last 75 sets of samples to the top
